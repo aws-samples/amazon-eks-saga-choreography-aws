@@ -1,18 +1,14 @@
-## My Project
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. // SPDX-License-Identifier: CC-BY-SA-4.0
 
-TODO: Fill this README out!
+# Introduction
 
-Be sure to:
+This project will set-up the required AWS artefacts for the `eks-saga-choreography` cluster.
 
-* Change the title in this README
-* Edit your repository description on GitHub
+## Usage
 
-## Security
+> The following links also carry instructions for _both_ installation and clean-up.
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License Summary
-
-The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the LICENSE file.
-
-The sample code within this documentation is made available under the MIT-0 license. See the LICENSE-SAMPLECODE file.
+1. [SNS and SQS](docs/sns-sqs.md) - to create SNS topic and subscriptions into SQS queues.
+2. [IAM](docs/iam.md) - to set-up IAM policies for SNS and RDS.
+3. [ECR](docs/ecr.md) - to set-up Amazon ECR repositories.
+4. [Images](docs/images.md) - to build and push images to ECR repositories.

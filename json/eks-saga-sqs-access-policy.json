@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Id": "eks-saga-sqs-access-policy-15122020",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:SendMessage",
+        "sqs:DeleteMessage"
+      ],
+      "Resource": "arn:aws:sqs:$REGION:$ACCOUNTID:$QNAME",
+      "Condition": {
+        "StringEquals": {
+          "aws:SourceAccount": "$ACCOUNTID"
+        }
+      }
+    }
+  ]
+}

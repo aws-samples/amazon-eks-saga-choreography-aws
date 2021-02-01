@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish",
+        "sns:Subscribe"
+      ],
+      "Resource": [
+        "arn:aws:sns:regionId:accountId:eks-saga-orders-success",
+        "arn:aws:sns:regionId:accountId:eks-saga-orders-fail",
+        "arn:aws:sns:regionId:accountId:eks-saga-inventory-success",
+        "arn:aws:sns:regionId:accountId:eks-saga-inventory-fail",
+        "arn:aws:sns:regionId:accountId:eks-saga-ordersrb-success",
+        "arn:aws:sns:regionId:accountId:eks-saga-ordersrb-fail"
+      ]
+    }
+  ]
+}

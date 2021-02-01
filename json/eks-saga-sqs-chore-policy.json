@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:SendMessage",
+        "sqs:DeleteMessage"
+      ],
+      "Resource": [
+        "arn:aws:sqs:regionId:accountId:eks-saga-orders-rollback",
+        "arn:aws:sqs:regionId:accountId:eks-saga-inventory-input",
+        "arn:aws:sqs:regionId:accountId:eks-saga-audit"
+      ]
+    }
+  ]
+}
