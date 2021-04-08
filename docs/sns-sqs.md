@@ -13,8 +13,8 @@ This page has instructions to set-up AWS SNS topics and subscriptions into AWS S
 Run this command to create topics, subscriptions queue for **Choreography** pattern.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-choreography-aws
+cd amazon-eks-saga-choreography-aws/scripts
 ./choreography.sh ${REGION_ID} ${ACCOUNT_ID}
 ```
 
@@ -23,7 +23,7 @@ cd eks-saga-aws/scripts
 To clean up after the **Choreography** demo, run this command.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
-./cleanup.sh ${REGION_ID} ${ACCOUNT_ID} C
+git clone ${GIT_URL}/amazon-eks-saga-choreography-aws
+cd amazon-eks-saga-choreography-aws/scripts
+./cleanup.sh ${REGION_ID} ${ACCOUNT_ID} O
 ```
