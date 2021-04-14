@@ -9,18 +9,16 @@ This page has instructions to set-up IAM policies for SQS, SNS and ELB.
 
 ## Usage
 
-Run this command for **Choreography** pattern.
-
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
-./iam.sh ${REGION_ID} ${ACCOUNT_ID} C
+git clone ${GIT_URL}/amazon-eks-saga-choreography-aws
+cd amazon-eks-saga-choreography-aws/scripts
+./iam.sh ${REGION_ID} ${ACCOUNT_ID} O
 ```
 
 To remove IAM set-up, run the following commands.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
-./ciam.sh ${ACCOUNT_ID} C
+git clone ${GIT_URL}/amazon-eks-saga-choreography-aws
+cd amazon-eks-saga-choreography-aws/scripts
+./ciam.sh ${ACCOUNT_ID} O
 ```

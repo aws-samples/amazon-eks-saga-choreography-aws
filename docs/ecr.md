@@ -4,20 +4,23 @@
 
 This page describes the creation of Amazon ECR repositories.
 
+- [Introduction](#introduction)
+  - [Usage](#usage)
+
 ## Usage
 
 To create the ECR repositories, run the following commands.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-choreography-aws
+cd amazon-eks-saga-choreography-aws/scripts
 ./ecr.sh C
 ```
 
 To remove the ECR repositories, run the following comamnds.
 
 ```bash
-git clone ${GIT_URL}/eks-saga-aws
-cd eks-saga-aws/scripts
+git clone ${GIT_URL}/amazon-eks-saga-choreography-aws
+cd amazon-eks-saga-choreography-aws/scripts
 ./ecr.sh D
 ```

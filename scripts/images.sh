@@ -26,15 +26,16 @@ e_images() {
   REGION_ID=$1
   ACCOUNT_ID=$2
   GIT_URL=$3
+  REPO_PREFIX=$4
 
   BUILD_DIR=../build
   mkdir ${BUILD_DIR}  
 
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-orders' 'orders'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-orders-rb' 'ordersrb'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-inventory' 'inventory'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-audit' 'audit'
-  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} 'eks-saga-trail' 'trail'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}orders" 'orders'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}orders-rb" 'ordersrb'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}inventory" 'inventory'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}audit" 'audit'
+  e_build ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} ${BUILD_DIR} "${REPO_PREFIX}trail" 'trail'
 
   rm -rf ${BUILD_DIR}
 }
@@ -55,11 +56,15 @@ if (! docker stats --no-stream ); then
 fi
 
 case "${DEMO_TYPE}" in
+  O)
+    e_images ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} amazon-eks-saga-orchestration-
+    ;;
+
   C)
-    e_images ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL}
+    e_images ${REGION_ID} ${ACCOUNT_ID} ${GIT_URL} amazon-eks-saga-choreography-
     ;;
 
   *)
-    echo "Invalid value for demo type ${DEMO_TYPE}. Valid values are C(horeography)."
+    echo "Invalid value for demo type ${DEMO_TYPE}. Valid values are C(horeography) and O(rchestration)."
     ;;
 esac
